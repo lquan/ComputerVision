@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+
+\bibitem{theoretical}
+{\sc Ahmad, A.~R., Khalid, M., Yusof, R., and Viard-Gaudin, C.}
+\newblock The comparative study of svm tools for data classification, 2009.
+
+\bibitem{nonverbal2}
+{\sc Asteriadis, S., Tzouveli, P., Karpouzis, K., and Kollias, S.}
+\newblock Non-verbal feedback on user interest based on gaze direction and head
+  pose.
+\newblock {\em International Workshop on Semantic Media Adaptation and
+  Personalization\/} (2007), 171--178.
+
+\bibitem{blockeel}
+{\sc Blockeel, H.}
+\newblock Machine learning and inductive inference, 2010.
+
+\bibitem{neural}
+{\sc Brown, L.~M., and Tran, Y.-L.}
+\newblock Comparative study of coarse head pose estimation.
+\newblock In {\em Proceedings of the Workshop on Motion and Video Computing\/}
+  (Washington, DC, USA, 2002), MOTION '02, IEEE Computer Society, pp.~125--135.
+
+\bibitem{hiddenlayer}
+{\sc Faqs.org}.
+\newblock {How many hidden units should I use?}, 2011.
+\newblock
+  \url{http://www.faqs.org/faqs/ai-faq/neural-nets/part3/section-10.html} [last
+  accessed: June 29, 2011].
+
+\bibitem{stat}
+{\sc Hubert, M.}
+\newblock Statistische modellen \& data-analyse, 2011.
+
+\bibitem{svmli}
+{\sc Li, Y., Gong, S., Sherrah, J., and Liddell, H.~M.}
+\newblock Support vector machine based multi-view face detection and
+  recognition.
+\newblock {\em Image and Vision Computing 22\/} (2003), 413--427.
+
+\bibitem{overview}
+{\sc Murphy-Chutorian, E., and Trivedi, M.}
+\newblock Head pose estimation in computer vision: A survey.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence
+  31}, 4 (Apr. 2009), 607--626.
+
+\bibitem{nonverbal}
+{\sc Sheerman-Chase, T., Ong, E.-J., and Bowden, R.}
+\newblock Feature selection of facial displays for detection of non verbal
+  communication in natural conversation.
+\newblock In {\em IEEE International Workshop on Human-Computer Interaction\/}
+  (Kyoto, Oct 2009).
+
+\bibitem{suykens2002least}
+{\sc Suykens, J.}
+\newblock {\em Least squares support vector machines}.
+\newblock World Scientific, 2002.
+
+\bibitem{eigenface}
+{\sc Turk, M.~A., and Pentland, A.~P.}
+\newblock {Face recognition using eigenfaces}.
+\newblock In {\em Proceedings. 1991 IEEE Computer Society Conference on
+  Computer Vision and Pattern Recognition\/} (1991), IEEE Comput. Sco. Press,
+  pp.~586--591.
+
+\bibitem{svmwikipedia}
+{\sc Wikipedia}.
+\newblock {Support Vector Machines} --- {W}ikipedia, the free encyclopedia,
+  2011.
+\newblock \url{http://en.wikipedia.org/wiki/Support_vector_machine} [last
+  accessed: June 29, 2011].
+
+\bibitem{facerec}
+{\sc Zhang, X., and Gao, Y.}
+\newblock Face recognition across pose: A review.
+\newblock {\em Pattern Recognition 42}, 11 (2009), 2876--2896.
+
+\end{thebibliography}

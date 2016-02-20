@@ -1,0 +1,26 @@
+\BOOKMARK [1][-]{section.1}{Inleiding}{}
+\BOOKMARK [1][-]{section.2}{Specificaties}{}
+\BOOKMARK [1][-]{section.3}{Overzicht aanpakken}{}
+\BOOKMARK [2][-]{subsection.3.1}{Appearance template}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Detector array}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Nonlinear regression}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Manifold embedding}{section.3}
+\BOOKMARK [2][-]{subsection.3.5}{Flexible model}{section.3}
+\BOOKMARK [2][-]{subsection.3.6}{Geometric model}{section.3}
+\BOOKMARK [2][-]{subsection.3.7}{Tracking}{section.3}
+\BOOKMARK [2][-]{subsection.3.8}{Hybride}{section.3}
+\BOOKMARK [1][-]{section.4}{Hoofdpose schatting}{}
+\BOOKMARK [2][-]{subsection.4.1}{Keuze aanpak}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Overzicht}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Voorstelling \(feature data\)}{subsection.4.2}
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Leren van een model}{subsection.4.2}
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Voorspellen van poses}{subsection.4.2}
+\BOOKMARK [2][-]{subsection.4.3}{Evaluatie}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Neurale netwerken}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Support Vector Machines}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Vergelijking}{subsection.4.3}
+\BOOKMARK [1][-]{section.5}{Gezichtsherkenning}{}
+\BOOKMARK [2][-]{subsection.5.1}{Implementatie}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Evaluatie}{section.5}
+\BOOKMARK [1][-]{section.6}{Conclusie}{}
+\BOOKMARK [1][-]{appendix.A}{Labeling van testdata}{}

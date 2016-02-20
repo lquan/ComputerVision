@@ -1,0 +1,296 @@
+korte samenvatting van elke methode en voor-en nadelen
+
+Accurate: The system should provide a reasonable
+estimate of pose with a mean absolute error of 5
+or less.
+Monocular: The system should be able to estimate
+head pose from a single camera. Although accuracy
+might be improved by stereo or multiview imagery,
+this should not be a requirement for the system to
+operate.
+Autonomous: There should be no expectation of
+manual initialization, detection, or localization,
+precluding the use of pure-tracking approaches
+that measure the relative head pose with respect to
+some initial configuration and shape/geometric
+approaches that assume facial feature locations
+are already known.
+
+
+------------------------------------------------------
+Appearance template methods compare a new image 
+of a head to a set of exemplars (each labeled with a 
+discrete pose) in order to find the most similar view. 
++ (can be) easy, works for high and low resolution data, data is already labeled
+- accuracy (faulty assumption of pairwise similiarity)?
+	(<-> techniques to reduce variance in facial features,
+	but still this might be fixing in a fundamentally wrong approach
+	(humans don't need no experience in head pose..?))
+- discrete approach: for each pose a set of training examples
+		-> for a rather continuous pose there must be many sets
+			-> computationally expensive
+
+
+
+
+Detector array methods train a series of head 
+detectors each attuned to a specific pose and assign 
+a discrete pose to the detector with the greatest
+support.
++ works with high and low resolution
++ can learn to ignore appearance variation that does not correspond to pose change
++  separate head detection and localization step is not
+required, since each detector is also capable of making the
+distinction between head and nonhead. ->  the 2 are combined -> less chance to make an error
+(+/- each detector can make the distictio between head and nonhead -> we'll only get heads so it is not necessary?)
+- discrete nature of this approach: limited set of pose detectors <-> "continuous" pose
+									many is again computationally difficult					We need quite some accuracy!
+- training (many + and - examples for each detector) -> we do not have MANY examples
+
++ Simultaneous
+detection and pose estimation can be performed by
+applying the detector to many subregions in the image.
+
++ Another improvement is that unlike appearance templates,
+detector arrays employ training algorithms that learn to
+ignore the appearance variation that does not correspond to
+pose change. Detector arrays are also well suited for high
+and low-resolution images.
+
+
+- It is burdensome to train many detectors for each discrete pose.
+For a detector array to function as a head detector and pose
+estimator, it must also be trained on many negative nonface
+examples, which require substantially more training data.
+In addition, there may be systematic problems that arise as
+the number of detectors is increased. If two detectors are
+attuned to very similar poses, the images that are positive
+training examples for one must be negative training
+examples for another. It is not clear whether prominent
+detection approaches can learn a successful model when the
+positive and negative examples are very similar in appear-
+ance. Indeed, in practice, these systems have been limited to
+one DOF and fewer than 12 detectors. Furthermore, since
+the majority of the detectors have binary outputs, there is no
+way to derive a reliable continuous estimate from the result,
+allowing only coarse head pose estimates and creating
+ambiguities when multiple detectors simultaneously classi-
+fy a positive image. Finally, the computational requirements
+increase linearly with the number of detectors, making it
+difficult to implement a real-time system with a large array.
+
+- not tested on gaze and yaw change
+
+
+
+
+
+
+Nonlinear regression methods use nonlinear regres-
+sion tools to develop a functional mapping from the
+image or feature data to a head pose measurement.
+
+-The caveat with these approaches is that it is not
+clear how well a specific regression tool will be able to learn
+the proper mapping.
+
+
++Success has been
+demonstrated using Support Vector Regressors (SVRs) if
+the dimensionality of the data can be reduced, as for
+example with principal component analysis (PCA) [64],
+[65], or with localized gradient orientation histograms [86]
+—the latter giving better accuracy for head pose estimation.
+Alternatively, if the location of facial features are known in
+advance, regression tools can be used on relatively low-
+dimensional feature data extracted at these points [70], [78].
+
++ Neural networks are very fast, only require
+cropped labeled faces for training, work well in near-field
+and far-field imagery, and give some of the most accurate
+head pose estimates in practice
+
+- prone to  error from poor head localization
+- difficult??
+
+
+
+
+
+Manifold embedding methods seek low-dimen-
+sional manifolds that model the continuous variation
+in head pose. New images can be embedded into
+these manifolds and then used for embedded
+template matching or regression.
+
++- Two of the most popular dimensionality reduction
+techniques, PCA and its nonlinear kernelized version,
+KPCA, discover the primary modes of variation from a
+set of data samples. inferior head estimation but...
++ To mitigate these problems, the appearance information
+can be decoupled from the pose by splitting the training
+data into groups that each share the same discrete head
+pose. Then, PCA and KPCA can be applied to generate a
+separate projection matrix for each group. These pose-
+specific eigenspaces, or pose-eigenspaces, each represent the
+primary modes of appearance variation and provide a
+decomposition that is independent of the pose variation.
+Head pose can be estimated by normalizing the image and
+projecting it into each of the pose-eigenspaces, thus finding
+the pose with the highest projection energy [114]. Alter-
+natively, the embedded samples can be used as the input to
+a set of classifiers, such as multiclass SVMs [63]. As
+testament to the limitations of KPCA, however, it has been
+shown that, by skipping the KPCA projection altogether
+and using local Gabor binary patterns, one can greatly
+improve pose estimation with a set of multiclass SVMs [69].
+Pose-eigenspaces have an unfortunate side effect. The
+ability to estimate fine head pose is lost since, like detector
+arrays, the estimate is derived from a discrete set of
+measurements. If only coarse head pose estimation is
+desired, it is better to use multiclass linear discriminant
+analysis (LDA) or the kernelized version, KLDA [23], since
+these techniques can be used to find the modes of variation
+in the data that best account for the differences between
+discrete pose classes [15], [136].
+
+Other manifold embedding approaches have shown
+more promise for head pose estimation. These include
+Isometric feature mapping (Isomap) [101], [119], Locally
+Linear Embedding (LLE) [102], and Laplacian Eigenmaps
+(LE) [6]. To estimate head pose with any of these
+techniques, there must be a procedure to embed a new
+data sample into an existing manifold. Raytchev et al. [101]
+described such a procedure for an Isomap manifold, but, for
+out-of-sample embedding in an LLE and LE manifold, there
+has been no explicit solution. For these approaches, a new
+sample must be embedded with an approximate technique,
+such as a Generalized Regression Neural Network [4].
+
+
+
+-seems a lot of work
+
+- rigid model of head might be unrealistic.
+
+
+Flexible models fit a nonrigid model to the facial
+structure of each individual in the image plane. Head
+pose is estimated from feature-level comparisons or
+from the instantiation of the model parameters.
+
++- In addition to pose
+labels, these methods require training data with annotated
+facial features, but it enables them to make comparisons at ---> do we have this annotation already?
+
++- Now,
+consider a template based on a deformable graph of local
+feature points (eye corners, nose, mouth corners, etc.). To
+train this system, facial feature locations are manually
+labeled in each training image, and local feature descriptors
+such as Gabor jets can be extracted at each location. These
+features can be extracted from views of multiple people,
+and extra invariance can be achieved by storing a bunch of
+descriptors at each node. This representation has been
+called an Elastic Bunch Graph   --> seems interesting and flexible but...
+Elastic Graph Matching
+(EGM). For head pose estimation, a different bunch graph is
+created for every discrete pose, and each of these is
+compared to a new view of the head. The bunch graph
+with the maximum similarity assigns a discrete pose to the
+head [55], [136]. Because EGM uses features located at
+specific facial points, there is significantly less intersubject
+variability than with unaligned points. This makes it much
+more likely that similarity between the models will equate
+to similarity in pose. A disadvantage to this method is that
+the pose estimate is discrete, requiring many bunch graphs
+to gain fine head pose estimates. Unfortunately, comparing
+many bunch graphs, each with many deformations, is
+computationally expensive in comparison to most other
+head pose estimation techniques.
+
+
+
+Another flexible model that has evolved for head pose
+estimation is the Active Appearance Model (AAM) [19],
+which learns the primary modes of variation in facial
+shape and texture from a 2D perspective. Consider a set
+of M specific facial points, (perhaps the corners of the
+
+- In practice, these approaches are limited to head
+pose orientations from which the outer corners of both eyes
+are visible. It is also not evident that AAM fitting algorithms
+could successfully operate for far-field head pose estimation
+with low-resolution facial images. <- niet echt relevant nadeel voor ons
+
+
+
+
+
+
+
+
+
+
+Geometric methods use the location of features such
+as the eyes, mouth, and nose tip to determine pose
+from their relative configuration.
+
+
++These methods are particularly
+interesting because they can directly exploit properties that
+are known to influence human head pose estimation.
+
+These geometric methods are fast and simple. With only
+a few facial features, a decent estimate of head pose can be
+obtained. The obvious difficulty lies in detecting the
+features with high precision and accuracy, but the more
+subtle challenges stem from handling outlying or missing
+feature detections.
+
+Also, situations often arise that can permanently obscure
+facial landmarks, such as when a person wears glasses and
+obscures his eye corners. Considering that geometric
+approaches depend on the accurate detection of facial
+points, they are typically more sensitive to occlusion than
+appearance-based methods that use information from the
+entire facial region.
+
+
+It is worth noting that even very simple geometric cues
+can be used to estimate head pose. Fitting an ellipse to the
+gradient contour and color of a face provides a coarse
+estimate of pose for one DOF [20]. For near-frontal faces, the
+yaw of a face can be reliably estimated by creating a triangle
+between the eyes and the mouth and finding its deviation
+from a pure isosceles triangle [90].
+
+
+
+
+
+Tracking methods recover the global pose change of
+the head from the observed movement between
+video frames.
+-irrelevant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hybrid methods combine one or more of these
+aforementioned methods to overcome the limita-
+tions inherent in any single approach.
+
+
+

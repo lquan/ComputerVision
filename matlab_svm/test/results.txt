@@ -1,0 +1,118 @@
+grayscale histeq 32x32 
+
+yaw_model = svmtrain2(yaw, trainingData, '-g 4.88e-5 -c 8');
+pitch_model = svmtrain2(pitch, trainingData, '-g 3.05e-5 -c 2048');
+
+results =
+
+     0     0
+   -90     0
+    30     0
+     0     5
+    20     0
+    30     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     0
+     0    10
+   -30     0
+     0     0
+    20     0
+    30     0
+
+
+---
+
+grayscale histeq 32x32 
+PCA 20 pc
+
+yaw_model = svmtrain2(yaw, trainingData, '-g 0.00012207 -c 32768');
+pitch_model = svmtrain2(pitch, trainingData, '-g 0.0078125 -c 32');
+
+     0     0
+   -90     0
+    30     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     0
+     0    10
+   -45     0
+    10     0
+    20     0
+    30     0
+
+
+---
+
+grayscale histeq sobel filters 32x32 
+PCA 20 pc
+
+yaw_model = svmtrain2(yaw, trainingData, '-g 0.125 -c 32');
+pitch_model = svmtrain2(pitch, trainingData, '-g 0.0078125 -c 2048');
+
+
+     0     0
+   -90     0
+    20     0
+     0    10
+    20     0
+    20     0
+    30     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0    10
+     0    10
+   -45     0
+     0     0
+    20     0
+    20     0
+
+---
+
+grayscale histeq sobel filters 64x64 
+PCA 20 pc
+
+yaw_model = svmtrain2(yaw, trainingData, '-g 0.125 -c 8');
+pitch_model = svmtrain2(pitch, trainingData, '-g 0.0078125 -c 512');
+
+
+     0     0
+   -90     0
+    30     0
+     0    10
+    20     0
+    30     0
+    30     0
+     0     5
+     0    10
+    20     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0    10
+     0    10
+   -45     0
+     0     0
+    20     0
+    30     0

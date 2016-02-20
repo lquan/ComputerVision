@@ -1,0 +1,43 @@
+\ProvidesPackage{mystyle}
+%--------packages----------------------------------------------
+
+\usepackage[utf8]{inputenc}   %unicode
+\usepackage{babel}
+\usepackage{siunitx}
+\usepackage[T1]{fontenc}       %T1 cork encoding
+\usepackage{lmodern}          %latin modern fonts
+\usepackage{amssymb}
+
+%\usepackage{natbib}
+%\usepackage{gfsdidot} 
+%\usepackage{babelbib}
+%\usepackage{bbding}
+\usepackage{textcomp}         %extra symbols
+\usepackage{amsmath}
+%\usepackage[margin=1.5in]{geometry}
+\usepackage{microtype}         %protrusion and kerning
+%\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subfig}
+%\usepackage{lipsum}            %dummy text
+\usepackage{tabularx}
+\usepackage{booktabs}          %professional tables
+\usepackage{pifont}
+\usepackage[toc,page]{appendix}
+
+%\usepackage{listings}
+\usepackage{caption}
+%\usepackage{longtable}
+
+\usepackage[pdfauthor={Li Quan \& Philippe Tanghe},%
+pdftitle={Computer Vision: Head Pose estimation},%
+pagebackref=false,%
+pdftex]{hyperref}
+
+
+%-------------------------------------------------------------
+
+\graphicspath{{./img/}}
+%\renewcommand*\familydefault{\sfdefault}
+\captionsetup{labelfont=bf,format=hang} %change appearance of captions
+

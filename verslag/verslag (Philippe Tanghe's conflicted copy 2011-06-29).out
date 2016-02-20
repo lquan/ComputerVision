@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Inleiding}{}% 1
+\BOOKMARK [1][-]{section.2}{Motivering en specificaties}{}% 2
+\BOOKMARK [1][-]{section.3}{Overzicht aanpakken}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Appearance template}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Detector array}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Nonlinear regression}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Manifold embedding}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Flexible model}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.6}{Geometric model}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.7}{Tracking}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.8}{Hybride}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Hoofdpose schatting}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Motivatie}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Overzicht}{section.4}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Feature data}{subsection.4.2}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Learning}{subsection.4.2}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Predicting}{subsection.4.2}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Evaluatie}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Gezichtsherkenning}{}% 19
+\BOOKMARK [2][-]{subsection.5.1}{Implementatie}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.2}{Evaluatie}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{Conclusie}{}% 22
+\BOOKMARK [1][-]{appendix.A}{Labeling van testdata}{}% 23

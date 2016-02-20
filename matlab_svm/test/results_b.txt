@@ -1,0 +1,516 @@
+grayscale histeq 32x32 
+
+yaw_model = svmtrain2(yaw, trainingData, '-g 0.000488 -c 8'); % C=8, gamma = .49e-6; 
+pitch_model = svmtrain2(pitch, trainingData, '-g 3.0518e-5 -c 2048');
+
+Test Accuracy:
+Accuracy = 95% (19/20) (classification)
+Accuracy = 90% (18/20) (classification)
+
+results1 =
+
+     0     0
+   -90     0
+    30     0
+     0     5
+    20     0
+    30     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     0
+     0    10
+    10     0
+    20     0
+    30     0
+   -30     0
+
+Training Accuracy:
+Accuracy = 97.6898% (296/303) (classification)
+Accuracy = 99.67% (302/303) (classification)
+
+-----------------------------------------------------------------------------
+grayscale histeq 32x32 
+PCA 20 pc
+
+yaw_model = svmtrain2(yaw, trainingData, '-g 0.00012207 -c 32768');
+pitch_model = svmtrain2(pitch, trainingData, '-g 0.0078125 -c 32');
+
+Accuracy = 100% (20/20) (classification)
+Accuracy = 85% (17/20) (classification)
+
+pred =
+
+     0     0
+    -5     0
+     3     0
+     0     2
+     2     0
+     3     0
+     4     0
+     0     1
+     0     2
+     3     0
+     4     0
+     5     0
+    -4     0
+     2     0
+     0     0
+     0     2
+     1     0
+     2     0
+     3     0
+    -4     0
+
+
+
+Accuracy = 98.3498% (298/303) (classification)
+Accuracy = 87.7888% (266/303) (classification)
+
+-----------------------------------------------------------------------
+NN greyscale histeq 32x32
+hidden layer size:
+	yaw: 10
+	pitch: 40
+
+train_acc = 0.6271
+
+
+test_acc = 0.6000
+
+
+results =
+
+     0     0
+   -90     0
+    90     0
+     0    10
+    20     0
+    30     0
+    90     0
+     0     0
+     0    10
+    30     0
+     0     0
+    90     0
+    10     0
+    10     0
+     0     0
+     0    10
+    10     0
+    20     0
+    30     0
+   -90     0
+
+------------------------
+
+train_acc =
+
+    0.6667
+
+
+test_acc =
+
+    0.6500
+
+
+results =
+
+     0     0
+   -10     0
+    90     0
+     0     5
+    20     0
+    90     0
+    45     0
+     0     0
+     0    10
+    20     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     0
+     0     0
+    10     0
+    20     0
+    90     0
+   -45     0
+   
+-----------------------------
+train_acc =
+
+    0.6238
+
+
+test_acc =
+
+    0.5500
+
+
+results =
+
+     0     0
+   -90     0
+    45     0
+     0    10
+    20     0
+    20     0
+    45     0
+     0     0
+     0    10
+    20     0
+    45     0
+    20     0
+   -30     0
+    20     0
+     0     0
+     0    10
+    10     0
+    20     0
+    45     0
+   -30     0
+   
+-----------------------------
+without mirrored training examples
+
+train_acc =
+
+    0.7078
+
+
+test_acc =
+
+    0.8000
+
+
+results =
+
+     0     0
+   -90     0
+    45     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     0
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0    10
+     0    10
+    10     0
+    20     0
+   -90     0
+   -45     0
+
+---------------------------------
+train_acc =
+
+    0.8519
+
+
+test_acc =
+
+    0.8000
+
+
+results =
+
+     0     0
+   -90     0
+    45     0
+     0     5
+    20     0
+    30     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    10     0
+     0     5
+     0    10
+     0     0
+    20     0
+    30     0
+   -45     0
+   
+-----------------------------
+train_acc =
+
+    0.5185
+
+
+test_acc =
+
+    0.4500
+
+
+results =
+
+     0     0
+   -90     0
+    20     0
+     0     0
+    20     0
+    30     0
+    90     0
+     0     0
+     0     0
+    30     0
+    90     0
+    90     0
+   -45     0
+    10     0
+     0     0
+     0     0
+     0     0
+    30     0
+    90     0
+   -45     0
+   
+====================================
+NN 
+32x32 greyscale histeq pca
+without extra images
+hidden layer yaw 22 (= (input size + output size) * 2/3 - a rule of thumb)
+hidden layer pitch 33
+trainratio: 67%
+valratio: 33% (both for P en Y)
+
+train_y_acc = 0.9590
+train_p_acc = 0.7951
+train_acc = 0.7541
+test_y_acc = 1
+test_p_acc = 0.8500
+test_acc = 0.8500
+
+results =
+
+     0     0
+   -90     0
+    30     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     0
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0   -10
+     0    10
+   -45     0
+    10     0
+    20     0
+    30     0
+	
+
+---------------------------------------
+NN 
+32x32 greyscale histeq pca
+with extra images
+hidden layer yaw 22 (= (input size + output size) * 2/3 - a rule of thumb)
+hidden layer pitch 22
+trainratio: 70%
+valratio: 30% (both for P en Y)
+
+train_y_acc = 0.8684
+train_p_acc = 0.7763
+train_acc = 0.6447
+test_y_acc = 0.8000
+test_p_acc = 0.8500
+test_acc = 0.6500
+
+results =
+
+     0    10
+   -10     0
+    45     0
+     0     0
+    20     0
+    20     0
+    45     0
+     0     0
+     0    10
+    20     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0    10
+     0    10
+   -45     0
+    10     0
+    20     0
+    30     0
+
+-----------------------------
+NN 
+32x32 greyscale histeq "raw image"
+with extra images
+hidden layer yaw 22 (= (input size + output size) * 2/3 - a rule of thumb)
+hidden layer pitch 22
+trainratio: 70%
+valratio: 30% (both for P en Y)
+
+train_y_acc = 0.9572
+train_p_acc = 0.9178
+train_acc = 0.8750
+test_y_acc = 0.8000
+test_p_acc = 0.8000
+test_acc = 0.6000
+
+results =
+
+     0     0
+   -90     0
+    30     0
+     0    10
+    20     0
+    45     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     5
+     0     5
+   -30     0
+     0     0
+    20     0
+    45     0
+	
+------------------------------------
+NN 
+32x32 greyscale histeq "raw image"
+with extra images
+hidden layer yaw 22 (= (input size + output size) * 2/3 - a rule of thumb)
+hidden layer pitch 22
+trainratio: 67%
+valratio: 33% (both for P en Y)
+
+train_y_acc = 0.8783
+train_p_acc = 0.8454
+train_acc = 0.7237
+test_y_acc = 0.9000
+test_p_acc = 0.9000
+test_acc = 0.8000
+
+results =
+
+     0     5
+   -90     0
+    30     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     0
+     0    10
+    30     0
+    45     0
+    45     0
+   -45     0
+    20     0
+     0     5
+     0     5
+   -45     0
+     0     0
+    20     0
+    30     0
+	
+---------------------------------------
+NN 
+32x32 greyscale histeq "raw image"
+without extra images
+hidden layer yaw 22 (= (input size + output size) * 2/3 - a rule of thumb)
+hidden layer pitch 25
+trainratio: 67%
+valratio: 33% (both for P en Y)
+
+train_y_acc = 0.9672
+train_p_acc = 0.8607
+train_acc = 0.8279
+test_y_acc = 0.9000
+test_p_acc = 0.8500
+test_acc  0.7500
+
+results =
+
+     0     0
+   -90     0
+    45     0
+     0     5
+    20     0
+    30     0
+    45     0
+     0     0
+     0     0
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     5
+     0   -10
+   -45     0
+     0     0
+    20     0
+    30     0
+	
+----------------------------------
+NN 
+32x32 greyscale histeq "raw image"
+without extra images
+hidden layer yaw 22 (= (input size + output size) * 2/3 - a rule of thumb)
+hidden layer pitch 500
+trainratio: 67%
+valratio: 33% (both for P en Y)
+
+train_y_acc = 0.9631
+train_p_acc = 0.8238
+train_acc = 0.7869
+test_y_acc = 0.9500
+test_p_acc = 0.8500
+test_acc = 0.8000
+
+results =
+
+     0    10
+   -90     0
+    30     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     0
+     0    10
+    20     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0    10
+     0    10
+   -45     0
+    10     0
+    20     0
+    30     0

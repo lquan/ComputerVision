@@ -1,0 +1,53 @@
+
+yaw training set accuracy: 0.993421
+pitch training set accuracy: 0.930921
+
+results =
+
+     0     0
+   -90     0
+    45     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     0
+     0    10
+   -45     0
+    10     0
+    20     0
+    30     0
+
+
+yaw training set accuracy: 0.990132
+pitch training set accuracy: 0.937500
+
+results =
+
+     0     0
+   -90     0
+    45     0
+     0    10
+    20     0
+    30     0
+    45     0
+     0     5
+     0    10
+    30     0
+    45     0
+    90     0
+   -45     0
+    20     0
+     0     5
+     0    10
+   -30     0
+    10     0
+    20     0
+    30     0
